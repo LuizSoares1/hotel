@@ -46,18 +46,20 @@
 .landing-form-group-date
     display: flex
     height: 44px
-    justify-content: center
+    justify-content: start
     align-items: center
     color: #fff
     gap: 3px
     font-size: 1.5rem
     border-bottom: 1px solid #ffffffa8
+    min-width: 232px
     input
         background: transparent
         border: none
         padding: 5px
         color: #fff
         font-size: 13px
+        cursor: pointer
         &:focus
             border: none
             outline: none
@@ -75,3 +77,14 @@
         border-radius: 0 5px 5px 0
         font-size: 20px
         font-weight: 600
+        cursor: pointer
+        transition: all 0.3s
+        &:hover
+            background: #3a301d
+            color: #fff
+
+.arrow-icon
+  transition: transform 0.3s ease
+
+.arrow-icon.rotated
+  transform: rotate(180deg)

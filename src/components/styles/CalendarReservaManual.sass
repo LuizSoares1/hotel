@@ -1,0 +1,91 @@
+.calendar-reserva
+  display: flex
+  align-items: flex-start
+  gap: 20px
+  background: #fff
+  padding: 20px
+  border-radius: 10px
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2)
+  justify-content: center
+  position: relative
+  min-height: 420px
+
+.nav-btn
+  background: none
+  border: none
+  font-size: 1.5rem
+  cursor: pointer
+  padding: 10px
+  align-self: center
+
+.mes
+    width: 100%
+
+.mes-header
+    text-align: center
+    font-weight: bold
+    margin-bottom: 10px
+    font-size: 1.2rem
+
+.dias-semana
+    display: grid
+    grid-template-columns: repeat(7, 1fr)
+    font-weight: bold
+    margin-bottom: 5px
+    text-align: center
+
+.grid-dias
+    display: grid
+    grid-template-columns: repeat(7, 1fr)
+    gap: 4px
+
+.dia
+    background: none
+    border: 1px solid #D0ECE9
+    cursor: pointer
+    border-radius: 4px
+    text-align: center
+    font-size: 16px
+    height: 50px
+
+    &:hover
+        background: #EAC47D
+        color: #fff
+
+    &.fora
+        color: #aaa
+
+    &.selecionado
+        background: #a88647
+        color: #fff
+
+.dia.placeholder
+    border: none
+    cursor: default
+    pointer-events: none
+    background: transparent
+
+.calendar-wrapper
+  transform-origin: top center
+
+  &.opening
+    animation: slideDown 0.3s ease forwards
+
+  &.closing
+    animation: slideUp 0.3s ease forwards
+
+@keyframes slideDown
+  from
+    opacity: 0
+    transform: translateY(-20px)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes slideUp
+  from
+    opacity: 1
+    transform: translateY(0)
+  to
+    opacity: 0
+    transform: translateY(-20px)
