@@ -17,3 +17,61 @@
     h1
         font-size: 3rem
         font-weight: 500
+
+.landing-form-container
+    position: absolute
+    top: 90%   // ajusta a altura (pode ser 50% se quiser bem no meio)
+    left: 50%
+    transform: translate(-50%, -50%)
+    background: rgba(0,0,0,0.7)
+    height: 100px
+    max-width: 1400px
+    width: 100%
+    border-radius: 5px 
+
+.landing-form
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 100%   
+
+.landing-form-groups
+    display: flex
+    gap: 20px
+    max-width: 1200px
+    width: 100%
+    justify-content: center
+    
+
+.landing-form-group-date
+    display: flex
+    height: 44px
+    justify-content: center
+    align-items: center
+    color: #fff
+    gap: 3px
+    font-size: 1.5rem
+    border-bottom: 1px solid #ffffffa8
+    input
+        background: transparent
+        border: none
+        padding: 5px
+        color: #fff
+        font-size: 13px
+        &:focus
+            border: none
+            outline: none
+            color: #fff
+
+
+.landing-form-group-btn
+    height: 100%
+    min-width: 230px
+    button
+        height: 100%
+        width: 100%
+        background: #EAC47D
+        border: none
+        border-radius: 0 5px 5px 0
+        font-size: 20px
+        font-weight: 600
