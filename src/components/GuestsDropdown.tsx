@@ -59,28 +59,33 @@ const GuestsDropdown: React.FC<GuestsDropdownProps> = ({
                 </div>
             </div>
 
-            {Array.from({ length: children }).map((_, i) => (
-                <div className="child-age" key={i}>
-                    <label>Criança {i + 1}</label>
-                    <select
-                        value={childrenAges[i] || 1}
-                        onChange={(e) => {
-                            const newAges = [...childrenAges]
-                            newAges[i] = parseInt(e.target.value)
-                            setChildrenAges(newAges)
-                        }}
-                    >
-                        {Array.from({ length: 17 }).map((_, age) => {
-                            const realAge = age + 1 // começa em 1
-                            return (
-                                <option key={realAge} value={realAge}>
-                                    {realAge} anos
-                                </option>
-                            )
-                        })}
-                    </select>
+            {children > 0 && (
+                <div className="child-age-group">
+                    <label>Idade das Crianças</label>
+                    <div className="child-age-selects">
+                        {Array.from({ length: children }).map((_, i) => (
+                            <select
+                                key={i}
+                                value={childrenAges[i] || 1}
+                                onChange={(e) => {
+                                    const newAges = [...childrenAges]
+                                    newAges[i] = parseInt(e.target.value)
+                                    setChildrenAges(newAges)
+                                }}
+                            >
+                                {Array.from({ length: 17 }).map((_, age) => {
+                                    const realAge = age + 1
+                                    return (
+                                        <option key={realAge} value={realAge}>
+                                            {realAge} anos
+                                        </option>
+                                    )
+                                })}
+                            </select>
+                        ))}
+                    </div>
                 </div>
-            ))}
+            )}
 
             <button className="apply-btn" onClick={onClose}>
                 Aplicar

@@ -128,7 +128,7 @@ const Landing: React.FC = () => {
             </div>
             <div className='landing-form-group-date'>
               <GoTag />
-              <input type="text" placeholder="Código promocional" />
+              <input type="text" placeholder="Código promocional"/>
             </div>
           </div>
 
