@@ -5,6 +5,7 @@
     background-size: cover
     background-position: center center
     background-repeat: no-repeat
+    z-index: 1
 
 .landing-text-div
     color: #fff
@@ -20,20 +21,20 @@
 
 .landing-form-container
     position: absolute
-    top: 90%   // ajusta a altura (pode ser 50% se quiser bem no meio)
+    top: 90% // ajusta a altura (pode ser 50% se quiser bem no meio)
     left: 50%
     transform: translate(-50%, -50%)
     background: rgba(0,0,0,0.7)
     height: 100px
     max-width: 1400px
     width: 100%
-    border-radius: 5px 
+    border-radius: 5px
 
 .landing-form
     display: flex
     align-items: center
     justify-content: space-between
-    height: 100%   
+    height: 100%
 
 .landing-form-groups
     display: flex
@@ -41,7 +42,6 @@
     max-width: 1200px
     width: 100%
     justify-content: center
-    
 
 .landing-form-group-date
     display: flex
@@ -53,6 +53,7 @@
     font-size: 1.5rem
     border-bottom: 1px solid #ffffffa8
     min-width: 232px
+    
     input
         background: transparent
         border: none
@@ -67,10 +68,10 @@
         &::placeholder
             color: #fff
 
-
 .landing-form-group-btn
     height: 100%
     min-width: 230px
+    
     button
         height: 100%
         width: 100%
@@ -86,7 +87,7 @@
             color: #fff
 
 .arrow-icon
-  transition: transform 0.3s ease
+    transition: transform 0.3s ease
 
 .arrow-icon.rotated
-  transform: rotate(180deg)
+    transform: rotate(180deg)
