@@ -32,7 +32,7 @@ const Header: React.FC = () => {
                             <a href="#">Café da Manhã</a>
                         </li>
                         <li className='hotel-navigation-list-li'>
-                            <a href="#">Galeria</a>
+                            <a href="#">Pet Friendly</a>
                         </li>
                         <li className='hotel-navigation-list-li'>
                             <a href="#">Fale Conosco</a>

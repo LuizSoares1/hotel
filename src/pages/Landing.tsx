@@ -21,7 +21,6 @@ const Landing: React.FC = () => {
   const calendarRef = useRef<HTMLDivElement>(null)
   const formRef = useRef<HTMLDivElement>(null)
 
-  // Fecha com animação
   const closeCalendar = () => {
     setIsClosing(true)
     setTimeout(() => {
