@@ -3,8 +3,8 @@ import './style/landing.sass'
 import { CiCalendar } from 'react-icons/ci'
 import { IoIosArrowDown } from 'react-icons/io'
 import { GoPeople, GoTag } from 'react-icons/go'
-import CalendarReservaManual from '../components/CalendarReservaManual'
-import GuestsDropdown from '../components/GuestsDropdown'
+import CalendarReservaManualDesktop from '../../components/Desktop/CalendarReservaManualDestop'
+import GuestsDropdownDesktop from '../../components/Desktop/GuestsDropdownDesktop'
 
 const Landing: React.FC = () => {
   const [showCalendar, setShowCalendar] = useState(false)
@@ -88,46 +88,58 @@ const Landing: React.FC = () => {
               className='landing-form-group-date'
               onClick={() => handleInputClick('checkin')}
             >
-              <CiCalendar />
-              <input
-                type="text"
-                value={checkIn ? checkIn.toLocaleDateString() : "Check-in"}
-                readOnly
-              />
+              <div className='landing-icon-and-input'>
+                <CiCalendar />
+                <input
+                  type="text"
+                  value={checkIn ? checkIn.toLocaleDateString() : "Check-in"}
+                  readOnly
+                />
+              </div>
+
               <IoIosArrowDown className={`arrow-icon ${showCalendar ? 'rotated' : ''}`} />
             </div>
             <div
               className='landing-form-group-date'
               onClick={() => handleInputClick('checkout')}
             >
-              <CiCalendar />
-              <input
-                type="text"
-                value={checkOut ? checkOut.toLocaleDateString() : "Check-out"}
-                readOnly
-              />
+              <div className='landing-icon-and-input'>
+                <CiCalendar />
+                <input
+                  type="text"
+                  value={checkOut ? checkOut.toLocaleDateString() : "Check-out"}
+                  readOnly
+                />
+              </div>
+
               <IoIosArrowDown className={`arrow-icon ${showCalendar ? 'rotated' : ''}`} />
             </div>
             <div
               className='landing-form-group-date'
               onClick={() => setActiveInput(activeInput === 'guests' ? null : 'guests')}
             >
-              <GoPeople />
-              <input
-                type="text"
-                value={
-                  adults === 0 && children === 0
-                    ? "Hóspedes"
-                    : `${adults > 0 ? `${adults} Adulto${adults > 1 ? 's' : ''}` : ''}${children > 0 ? `${adults > 0 ? ', ' : ''}${children} Criança${children > 1 ? 's' : ''}` : ''
-                    }`
-                }
-                readOnly
-              />
+              <div className='landing-icon-and-input'>
+                <GoPeople />
+                <input
+                  type="text"
+                  value={
+                    adults === 0 && children === 0
+                      ? "Hóspedes"
+                      : `${adults > 0 ? `${adults} Adulto${adults > 1 ? 's' : ''}` : ''}${children > 0 ? `${adults > 0 ? ', ' : ''}${children} Criança${children > 1 ? 's' : ''}` : ''
+                      }`
+                  }
+                  readOnly
+                />
+              </div>
+
               <IoIosArrowDown className={`arrow-icon ${activeInput === 'guests' ? 'rotated' : ''}`} />
             </div>
             <div className='landing-form-group-date'>
-              <GoTag />
-              <input type="text" placeholder="Código promocional" />
+              <div className='landing-icon-and-input'>
+                <GoTag />
+                <input type="text" placeholder="Código promocional" />
+              </div>
+
             </div>
           </div>
 
@@ -140,7 +152,7 @@ const Landing: React.FC = () => {
             className={`calendar-wrapper ${isClosing ? 'closing' : 'opening'}`}
             ref={calendarRef}
           >
-            <CalendarReservaManual
+            <CalendarReservaManualDesktop
               onSelectDate={handleDateSelect}
               checkIn={checkIn}
               checkOut={checkOut}
@@ -149,7 +161,7 @@ const Landing: React.FC = () => {
         )}
         {activeInput === 'guests' && (
           <div className={`guests-wrapper ${isClosing ? 'closing' : 'opening'}`}>
-            <GuestsDropdown
+            <GuestsDropdownDesktop
               adults={adults}
               children={children}
               childrenAges={childrenAges}

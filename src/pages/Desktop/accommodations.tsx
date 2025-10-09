@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Navigation } from 'swiper/modules'
 import './style/accomodations.sass'
@@ -40,31 +40,34 @@ const rooms = [
 ]
 
 const Acomodacoes: React.FC = () => {
-    const [slidesPerView, setSlidesPerView] = useState(3)
-    const [spaceBetween, setSpaceBetween] = useState(0)
+//     const [slidesPerView, setSlidesPerView] = useState(3)
+//     const [spaceBetween, setSpaceBetween] = useState(0)
 
-useEffect(() => {
-  const handleResize = () => {
-    const width = window.innerWidth
-    if (width < 640) {
-      setSlidesPerView(1)
-      setSpaceBetween(10)
-    } else if (width < 768) {
-      setSlidesPerView(1)
-      setSpaceBetween(15)
-    } else if (width < 1024) {
-      setSlidesPerView(2)
-      setSpaceBetween(20)
-    } else {
-      setSlidesPerView(3)
-      setSpaceBetween(0)
-    }
-  }
+// useEffect(() => {
+//   const handleResize = () => {
+//     const width = window.innerWidth
+//     if (width < 640) {
+//       setSlidesPerView(1)
+//       setSpaceBetween(10)
+//     } else if (width < 768) {
+//       setSlidesPerView(1)
+//       setSpaceBetween(15)
+//     } else if (width < 1024) {
+//       setSlidesPerView(2)
+//       setSpaceBetween(20)
+//     } else {
+//       setSlidesPerView(3)
+//       setSpaceBetween(0)
+//     }
+//   }
 
-  handleResize()
-  window.addEventListener('resize', handleResize)
-  return () => window.removeEventListener('resize', handleResize)
-}, [])
+//   handleResize()
+//   window.addEventListener('resize', handleResize)
+//   return () => window.removeEventListener('resize', handleResize)
+// }, [])
+
+
+// Eu vou adaptar essa página para o modelo Mobile
 
     return (
         <section className='accommodations-section'>
@@ -91,8 +94,8 @@ useEffect(() => {
                 <Swiper
                     className="accommodations-slider"
                     modules={[Pagination, Navigation]}
-                    slidesPerView={slidesPerView}
-                    spaceBetween={spaceBetween}
+                    slidesPerView={3}
+                    spaceBetween={0}
                     pagination={{ clickable: true }}
                     navigation={true}
                     loop={true}

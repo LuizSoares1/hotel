@@ -1,11 +1,11 @@
 import React from 'react'
-import Header from '../components/Header'
+import Header from '../../components/Desktop/HeaderDesktop'
 import Landing from './Landing'
 import Hotel from './Hotel'
 import Acomodacoes from './accommodations'
 import Servicos from './services'
 
-const Home: React.FC = () => {
+const DesktopApp: React.FC = () => {
   return (
     <>
       <Header />
@@ -17,4 +17,4 @@ const Home: React.FC = () => {
   )
 }
 
-export default Home
+export default DesktopApp

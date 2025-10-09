@@ -11,7 +11,7 @@ interface GuestsDropdownProps {
     onClose: () => void
 }
 
-const GuestsDropdown: React.FC<GuestsDropdownProps> = ({
+const GuestsDropdownDesktop: React.FC<GuestsDropdownProps> = ({
     adults,
     children,
     childrenAges,
@@ -94,4 +94,4 @@ const GuestsDropdown: React.FC<GuestsDropdownProps> = ({
     )
 }
 
-export default GuestsDropdown
+export default GuestsDropdownDesktop

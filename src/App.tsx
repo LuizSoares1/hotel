@@ -1,10 +1,10 @@
 import React from 'react'
-import Home from './pages/Home'
+import DesktopApp from './pages/Desktop/DesktopApp'
 import './styles/app.sass'
 
 const App: React.FC = () => {
   return (
-    <Home />
+    <DesktopApp />
   )
 }
 

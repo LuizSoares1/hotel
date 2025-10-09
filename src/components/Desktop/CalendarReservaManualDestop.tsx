@@ -33,7 +33,7 @@ interface Props {
     checkOut: Date | null
 }
 
-const CalendarReservaManual: React.FC<Props> = ({ onSelectDate, checkIn, checkOut }) => {
+const CalendarReservaManualDesktop: React.FC<Props> = ({ onSelectDate, checkIn, checkOut }) => {
     const hoje = new Date()
     const [currentMonth, setCurrentMonth] = useState(hoje.getMonth())
     const [currentYear, setCurrentYear] = useState(hoje.getFullYear())
@@ -104,4 +104,4 @@ const CalendarReservaManual: React.FC<Props> = ({ onSelectDate, checkIn, checkOu
     )
 }
 
-export default CalendarReservaManual
+export default CalendarReservaManualDesktop
