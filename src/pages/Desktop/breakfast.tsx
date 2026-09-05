@@ -7,7 +7,7 @@ const CafeDaManha: React.FC = () => {
       <div className="breakfast-container">
         <div className="breackfast-image">
           <div className="breakfast-image-img">
-            <img src="/cafadamanha.jpg" alt="" />
+            <img src="/cafadamanha.jpg" alt="" draggable="false"/>
           </div>
         </div>
         <div className='breakfast-text'>

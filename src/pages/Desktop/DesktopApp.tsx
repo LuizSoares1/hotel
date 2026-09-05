@@ -5,6 +5,7 @@ import Hotel from './Hotel'
 import Acomodacoes from './accommodations'
 import Servicos from './services'
 import CafeDaManha from './breakfast'
+import PetFriendly from './petFriendly'
 
 const DesktopApp: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const DesktopApp: React.FC = () => {
       <Acomodacoes />
       <Servicos />
       <CafeDaManha />
+      <PetFriendly />
     </>
   )
 }
