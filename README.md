@@ -8,12 +8,13 @@ Aplicação frontend feita com Vite + React + TypeScript que implementa a interf
 
 Tecnologias
 ----------
-- Vite
 - React
-- TypeScript (strict)
-- SASS
+- TypeScript com modo `strict`
+- Vite
+- Sass
 - Swiper
-- react-icons
+- React Icons
+- ESLint, caso configurado no projeto
 
 Como executar (Windows)
 -----------------------
@@ -43,48 +44,68 @@ Scripts importantes (package.json)
 
 Estrutura principal do projeto
 ------------------------------
-- index.html
-- public/ — imagens e assets públicos
-- src/
-  - main.tsx — bootstrap da aplicação
-  - App.tsx — componente raiz
-  - pages/Desktop/
-    - DesktopApp.tsx
-    - Landing.tsx
-    - Hotel.tsx
-    - accommodations.tsx
-    - services.tsx
-    - breakfast.tsx
-  - components/Desktop/
-    - HeaderDesktop.tsx
-    - CalendarReservaManualDestop.tsx
-    - GuestsDropdownDesktop.tsx
-    - styles/ — SASS por componente
-  - styles/app.sass
-- src/swiper-css.d.ts
-- tsconfig*.json
-- vite.config.ts
+hotel/
+├── public/
+│   └── imagens e arquivos públicos
+├── src/
+│   ├── components/
+│   │   └── Desktop/
+│   │       ├── CalendarReservaManualDestop.tsx
+│   │       ├── GuestsDropdownDesktop.tsx
+│   │       ├── HeaderDesktop.tsx
+│   │       └── styles/
+│   ├── pages/
+│   │   └── Desktop/
+│   │       ├── DesktopApp.tsx
+│   │       ├── Landing.tsx
+│   │       ├── Hotel.tsx
+│   │       ├── accommodations.tsx
+│   │       ├── services.tsx
+│   │       └── breakfast.tsx
+│   ├── styles/
+│   │   └── app.sass
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── swiper-css.d.ts
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
 
 Funcionalidades já implementadas
 --------------------------------
 - Header fixo com detecção de scroll e classe `scrolled`.
-- Landing com formulário de busca/reserva:
-  - Campos check-in/check-out com calendário manual.
-  - Dropdown de hóspedes (adultos/crianças) com seleção de idades.
-  - Cliques fora fecham os dropdowns; animações de abertura/fechamento.
+- Landing page com formulário de busca e reserva:
+  - Campos de check-in e check-out.
+  - Calendário manual para seleção de datas.
+  - Dropdown de hóspedes com adultos, crianças e seleção de idades.
+  - Fechamento dos dropdowns ao clicar fora.
+  - Animações de abertura e fechamento.
 - Calendário manual:
-  - Gera dias, navega entre meses e marca intervalos entre check-in e check-out.
-- Seção "O Hotel": slider de imagens com avanço automático.
-- Acomodações: carrossel implementado com Swiper (navegação e paginação).
-- Serviços: cards com ícones (react-icons).
+  - Geração dos dias do mês.
+  - Navegação entre meses.
+  - Seleção de intervalo entre check-in e check-out.
+- Seção “O Hotel” com slider automático de imagens.
+- Seção de acomodações com carrossel utilizando Swiper.
+- Seção de serviços com cards e ícones do React Icons.
+- Seção de café da manhã.
+- Componentes relacionados à experiência Pet Friendly.
+- Início da implementação do componente “Fale Conosco”.
+- Melhorias nos estilos Sass dos componentes Desktop.
+- Início da implementação do formulário da aplicação.
 
 Pontos a revisar / próximos passos
 ---------------------------------
-- Responsividade: revisar media queries e testes em diferentes larguras.
-- Acessibilidade: adicionar labels, aria-attributes e gerenciamento de foco.
-- Estado global: avaliar Context ou outro para persistir reserva entre páginas.
-- Testes: adicionar testes unitários e de integração.
-- Otimização: compressão/lazy-loading de imagens.
+Implementar ou concluir a versão Mobile.
+Adicionar testes unitários e de integração.
+Persistir os dados da reserva entre páginas.
+Avaliar o uso de Context API ou outra solução de estado global.
+Adicionar validação aos campos de reserva.
+Otimizar imagens com compressão e lazy loading.
+Melhorar SEO e metadados.
+Revisar acessibilidade.
+Configurar pipeline de qualidade para lint, testes e build.
 
 Contribuindo
 -----------
@@ -98,6 +119,20 @@ Licença
 # CHANGELOG
 
 Todos os itens listados por data (mais recente primeiro), com resumo das alterações e hash do commit.
+
+## 2026-09-05
+
+- Melhorias nos estilos Sass dos componentes Desktop e início do formulário.
+
+## 2026-09-04
+
+- Início do desenvolvimento do componente “Fale Conosco”.
+- Inclusão dos componentes relacionados a Pet Friendly.
+- Adição da seção de café da manhã.
+
+## 2025-10-13
+
+- Atualização do changelog no README.
 
 ## 2025-10-11
 - documentação do Readme (50b6971)  
