@@ -53,6 +53,7 @@ hotel/
 │   │       ├── CalendarReservaManualDestop.tsx
 │   │       ├── GuestsDropdownDesktop.tsx
 │   │       ├── HeaderDesktop.tsx
+            ├── Footer.tsx
 │   │       └── styles/
 │   ├── pages/
 │   │   └── Desktop/
@@ -61,6 +62,8 @@ hotel/
 │   │       ├── Hotel.tsx
 │   │       ├── accommodations.tsx
 │   │       ├── services.tsx
+            ├── petFriendly.tsx
+            ├── talkWithUs.tsx
 │   │       └── breakfast.tsx
 │   ├── styles/
 │   │   └── app.sass
@@ -75,37 +78,27 @@ hotel/
 
 Funcionalidades já implementadas
 --------------------------------
-- Header fixo com detecção de scroll e classe `scrolled`.
-- Landing page com formulário de busca e reserva:
-  - Campos de check-in e check-out.
-  - Calendário manual para seleção de datas.
-  - Dropdown de hóspedes com adultos, crianças e seleção de idades.
-  - Fechamento dos dropdowns ao clicar fora.
-  - Animações de abertura e fechamento.
-- Calendário manual:
-  - Geração dos dias do mês.
-  - Navegação entre meses.
-  - Seleção de intervalo entre check-in e check-out.
+- Header fixo com detecção de scroll.
+- Estados ativos nos componentes conforme a rolagem da página.
+- Landing page com formulário de busca e reserva.
+- Campos de check-in e check-out.
+- Calendário manual com seleção de períodos.
+- Dropdown de hóspedes com adultos, crianças e idades.
+- Fechamento dos dropdowns ao clicar fora.
+- Animações de abertura e fechamento.
 - Seção “O Hotel” com slider automático de imagens.
 - Seção de acomodações com carrossel utilizando Swiper.
 - Seção de serviços com cards e ícones do React Icons.
 - Seção de café da manhã.
 - Componentes relacionados à experiência Pet Friendly.
-- Início da implementação do componente “Fale Conosco”.
-- Melhorias nos estilos Sass dos componentes Desktop.
-- Início da implementação do formulário da aplicação.
+- Componente “Fale Conosco” em desenvolvimento.
+- Componente Footer Desktop.
+- Formulário com estilos Sass desenvolvidos e estrutura visual em andamento.
+- Estilos Sass dos componentes Desktop atualizados.
 
 Pontos a revisar / próximos passos
 ---------------------------------
-Implementar ou concluir a versão Mobile.
-Adicionar testes unitários e de integração.
-Persistir os dados da reserva entre páginas.
-Avaliar o uso de Context API ou outra solução de estado global.
-Adicionar validação aos campos de reserva.
-Otimizar imagens com compressão e lazy loading.
-Melhorar SEO e metadados.
-Revisar acessibilidade.
-Configurar pipeline de qualidade para lint, testes e build.
+Criação dos componente mobiles para a melhor vizualização em dispositivos móveis ou até mesmo baixa resolução.
 
 Contribuindo
 -----------
@@ -119,6 +112,12 @@ Licença
 # CHANGELOG
 
 Todos os itens listados por data (mais recente primeiro), com resumo das alterações e hash do commit.
+
+## 2026-09-06
+
+- Ajustes no Header para alterar os estados dos componentes conforme o scroll. (`47b27a2`)
+- Criação do componente Footer Desktop e seus estilos Sass. (`4fd03ff`)
+
 
 ## 2026-09-05
 
