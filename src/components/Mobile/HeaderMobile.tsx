@@ -11,9 +11,9 @@ const HeaderMobile: React.FC = () => {
   return (
     <header className="header-mobile">
       <div className="header-mobile-container">
-        <div className="hotel-logo">
+        <h1 className="hotel-logo">
           HOTEL
-        </div>
+        </h1>
 
         <button
           className={`menu-button ${menuOpen ? 'open' : ''}`}
