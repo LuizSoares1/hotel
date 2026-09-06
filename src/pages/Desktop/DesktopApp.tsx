@@ -7,6 +7,7 @@ import Servicos from './services'
 import CafeDaManha from './breakfast'
 import PetFriendly from './petFriendly'
 import FaleConosco from './talkWithUs'
+import FooterDesktop from '../../components/Desktop/FooterDesktop'
 
 const DesktopApp: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const DesktopApp: React.FC = () => {
       <CafeDaManha />
       <PetFriendly />
       <FaleConosco />
+      <FooterDesktop />
     </>
   )
 }
