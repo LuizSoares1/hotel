@@ -18,14 +18,37 @@ const FaleConosco: React.FC = () => {
                                 <div className='bar'></div>
                             </div>
                         </div>
-                        </div>
                     </div>
                 </div>
-                <div className="talkwithus-form">
-                    <form action="">
-                        
-                    </form>
-                </div>
+            </div>
+            <div className="talkwithus-form">
+                <form className="contact-form">
+                    <div className="form-row">
+                        <div className="form-input">
+                            <input type="text" placeholder="Nome" />
+                        </div>
+                        <div className="form-input">
+                            <input type="email" placeholder="Email" />
+                        </div>
+                    </div>
+
+                    <div className="form-input">
+                        <input type="tel" placeholder="Telefone" />
+                    </div>
+                    <div className="form-input">
+                        <textarea placeholder="Sua mensagem:"></textarea>
+                    </div>
+                    <div className="form-check">
+                        <input type="checkbox" id="consent" />
+                        <label htmlFor="consent">
+                            Ao marcar, concordo em compartilhar minhas respostas do formulário.
+                        </label>
+                    </div>
+                    <div className="form-submit">
+                        <button type="submit">ENVIAR</button>
+                    </div>
+                </form>
+            </div>
         </section>
     )
 }
