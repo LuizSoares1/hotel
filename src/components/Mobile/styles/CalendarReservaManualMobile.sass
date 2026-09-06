@@ -1,0 +1,275 @@
+.calendar-modal
+    position: fixed
+    inset: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 20px
+    background: rgba(0, 0, 0, 0.65)
+    z-index: 9999
+    box-sizing: border-box
+
+    animation: modalOverlayIn 0.3s ease forwards
+
+    &.closing
+        animation: modalOverlayOut 0.3s ease forwards
+
+        .calendar-modal-content
+            animation: modalContentOut 0.3s ease forwards
+
+
+.calendar-modal-content
+    position: relative
+    width: 100%
+    max-width: 500px
+    max-height: 90vh
+    padding: 25px
+    overflow-y: auto
+    background: #fff
+    border-radius: 12px
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3)
+    box-sizing: border-box
+
+    animation: modalContentIn 0.3s ease forwards
+
+
+.calendar-close
+    position: absolute
+    top: 15px
+    right: 15px
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 35px
+    height: 35px
+    padding: 0
+    border: none
+    border-radius: 50%
+    background: #f5f5f5
+    color: #333
+    font-size: 22px
+    cursor: pointer
+    z-index: 2
+    transition: all 0.2s ease
+
+    &:hover
+        background: #EAC47D
+        color: #fff
+        transform: rotate(90deg)
+
+
+.calendar-modal-header
+    padding-right: 40px
+    margin-bottom: 25px
+
+    div
+        display: flex
+        flex-direction: column
+        gap: 6px
+
+    span
+        color: #888
+        font-size: 12px
+
+    strong
+        color: #222
+        font-size: 16px
+
+
+.calendar-navigation
+    display: flex
+    align-items: center
+    gap: 10px
+
+    > button
+        display: flex
+        flex-shrink: 0
+        align-items: center
+        justify-content: center
+        width: 35px
+        height: 35px
+        padding: 0
+        border: none
+        background: transparent
+        cursor: pointer
+        font-size: 18px
+        transition: color 0.2s ease
+
+        &:hover
+            color: #EAC47D
+
+
+.calendar-months
+    display: flex
+    flex: 1
+    justify-content: center
+    gap: 25px
+
+
+.calendar-month
+    width: 100%
+
+
+.calendar-month-title
+    margin-bottom: 15px
+    color: #222
+    font-size: 16px
+    font-weight: 600
+    text-align: center
+
+
+.dias-semana-mobile
+    display: grid
+    grid-template-columns: repeat(7, 1fr)
+    margin-bottom: 8px
+    text-align: center
+
+    span
+        color: #888
+        font-size: 10px
+        font-weight: 600
+
+
+.grid-dias-mobile
+    display: grid
+    grid-template-columns: repeat(7, 1fr)
+    gap: 4px
+
+
+.dia-mobile
+    width: 100%
+    aspect-ratio: 1
+    padding: 0
+    border: 1px solid #D0ECE9
+    border-radius: 5px
+    background: #fff
+    color: #333
+    font-size: 13px
+    cursor: pointer
+    transition: all 0.15s ease
+
+    &:hover
+        background: #EAC47D
+        color: #fff
+
+    &.selecionado
+        background: #a88647
+        border-color: #a88647
+        color: #fff
+
+    &.placeholder
+        border: none
+        background: transparent
+        cursor: default
+        pointer-events: none
+
+
+// =====================================================
+// ANIMAÇÕES
+// =====================================================
+
+@keyframes modalOverlayIn
+    from
+        opacity: 0
+
+    to
+        opacity: 1
+
+
+@keyframes modalOverlayOut
+    from
+        opacity: 1
+
+    to
+        opacity: 0
+
+
+@keyframes modalContentIn
+    from
+        opacity: 0
+        transform: translateY(25px) scale(0.96)
+
+    60%
+        opacity: 1
+
+    to
+        opacity: 1
+        transform: translateY(0) scale(1)
+
+
+@keyframes modalContentOut
+    from
+        opacity: 1
+        transform: translateY(0) scale(1)
+
+    to
+        opacity: 0
+        transform: translateY(25px) scale(0.96)
+
+
+// =====================================================
+// ACIMA DE 800PX
+// =====================================================
+
+@media (min-width: 801px)
+
+    .calendar-modal-content
+        max-width: 850px
+        padding: 30px
+
+    .calendar-months
+        gap: 40px
+
+    .calendar-month
+        max-width: 340px
+
+    .dia-mobile
+        font-size: 14px
+
+
+// =====================================================
+// ATÉ 800PX
+// =====================================================
+
+@media (max-width: 800px)
+
+    .calendar-modal
+        padding: 15px
+
+    .calendar-modal-content
+        max-width: 450px
+        padding: 20px
+
+    .calendar-months
+        gap: 0
+
+        .calendar-month:nth-child(2)
+            display: none
+
+    .calendar-navigation
+        gap: 5px
+
+    .dia-mobile
+        font-size: 14px
+
+
+// =====================================================
+// CELULARES PEQUENOS
+// =====================================================
+
+@media (max-width: 380px)
+
+    .calendar-modal
+        padding: 10px
+
+    .calendar-modal-content
+        padding: 15px
+
+    .calendar-modal-header
+        margin-bottom: 15px
+
+        strong
+            font-size: 14px
+
+    .dia-mobile
+        font-size: 12px

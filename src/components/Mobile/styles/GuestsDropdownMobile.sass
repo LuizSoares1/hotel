@@ -1,0 +1,235 @@
+.guests-modal
+    position: fixed
+    inset: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 20px
+    background: rgba(0, 0, 0, 0.65)
+    z-index: 9999
+    box-sizing: border-box
+
+    animation: modalOverlayIn 0.3s ease forwards
+
+    &.closing
+        animation: modalOverlayOut 0.3s ease forwards
+
+        .guests-modal-content
+            animation: modalContentOut 0.3s ease forwards
+
+
+.guests-modal-content
+    position: relative
+    width: 100%
+    max-width: 450px
+    max-height: 90vh
+    padding: 25px
+    overflow-y: auto
+    background: #fff
+    border-radius: 12px
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3)
+    box-sizing: border-box
+
+    animation: modalContentIn 0.3s ease forwards
+
+.guests-close
+    position: absolute
+    top: 15px
+    right: 15px
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 35px
+    height: 35px
+    padding: 0
+    border: none
+    border-radius: 50%
+    background: #f5f5f5
+    color: #333
+    font-size: 22px
+    cursor: pointer
+    transition: all 0.2s ease
+
+    &:hover
+        background: #EAC47D
+        color: #fff
+        transform: rotate(90deg)
+
+
+.guests-header
+    display: flex
+    flex-direction: column
+    gap: 6px
+    padding-right: 45px
+    margin-bottom: 20px
+
+    span
+        color: #888
+        font-size: 12px
+
+    strong
+        color: #222
+        font-size: 17px
+
+.guest-row-mobile
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 18px 0
+    border-bottom: 1px solid #eee
+
+.guest-info
+    display: flex
+    flex-direction: column
+    gap: 5px
+
+    strong
+        color: #222
+        font-size: 15px
+
+    span
+        color: #888
+        font-size: 12px
+
+.counter-mobile
+    display: flex
+    align-items: center
+    gap: 15px
+
+    button
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 36px
+        height: 36px
+        border: 1px solid #ccc
+        border-radius: 50%
+        background: #fff
+        color: #333
+        font-size: 20px
+        cursor: pointer
+        transition: all 0.2s ease
+
+        &:hover
+            border-color: #EAC47D
+            background: #EAC47D
+            color: #fff
+
+        &:disabled
+            opacity: 0.35
+            cursor: not-allowed
+
+    span
+        min-width: 20px
+        color: #222
+        font-size: 16px
+        font-weight: 600
+        text-align: center
+
+
+.child-age-group-mobile
+    margin-top: 20px
+    padding: 15px
+    border-radius: 8px
+    background: #f8f5ef
+
+    > strong
+        display: block
+        margin-bottom: 12px
+        color: #222
+        font-size: 14px
+
+
+.child-age-selects-mobile
+    display: flex
+    flex-direction: column
+    gap: 10px
+
+    select
+        width: 100%
+        padding: 12px
+        border: 1px solid #ccc
+        border-radius: 5px
+        background: #fff
+        color: #222
+        font-size: 14px
+        outline: none
+
+        &:focus
+            border-color: #EAC47D
+
+
+.apply-btn-mobile
+    width: 100%
+    margin-top: 25px
+    padding: 14px
+    border: none
+    border-radius: 6px
+    background: #EAC47D
+    color: #000
+    font-size: 16px
+    font-weight: 600
+    cursor: pointer
+    transition: all 0.2s ease
+
+    &:hover
+        background: #a88647
+        color: #fff
+
+@keyframes modalOverlayIn
+    from
+        opacity: 0
+
+    to
+        opacity: 1
+
+
+@keyframes modalOverlayOut
+    from
+        opacity: 1
+
+    to
+        opacity: 0
+
+
+@keyframes modalContentIn
+    from
+        opacity: 0
+        transform: translateY(25px) scale(0.96)
+
+    60%
+        opacity: 1
+
+    to
+        opacity: 1
+        transform: translateY(0) scale(1)
+
+
+@keyframes modalContentOut
+    from
+        opacity: 1
+        transform: translateY(0) scale(1)
+
+    to
+        opacity: 0
+        transform: translateY(25px) scale(0.96)
+
+
+
+@media (max-width: 380px)
+
+    .guests-modal
+        padding: 10px
+
+    .guests-modal-content
+        padding: 20px
+
+    .guest-row-mobile
+        padding: 15px 0
+
+    .counter-mobile
+        gap: 10px
+
+        button
+            width: 32px
+            height: 32px
