@@ -3,42 +3,144 @@ import './styles/header.sass'
 
 const Header: React.FC = () => {
     const [scrolled, setScrolled] = useState(false)
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 10)
-        }
+    const [activeSection, setActiveSection] = useState('')
 
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
+    useEffect(() => {
+    const sections = [
+        'hotel',
+        'acomodacoes',
+        'servicos',
+        'cafe-da-manha',
+        'pet-friendly',
+        'fale-conosco'
+    ]
+
+    const scrolledColorActive = () => {
+        const scrollPosition = window.scrollY
+
+        setScrolled(scrollPosition > 10)
+
+        let currentSection = ''
+
+        sections.forEach((id) => {
+            const section = document.getElementById(id)
+
+            if (!section) return
+
+            const sectionTop = section.offsetTop
+
+            if (scrollPosition >= sectionTop - 150) {
+                currentSection = id
+            }
+        })
+
+        setActiveSection(currentSection)
+    }
+
+    window.addEventListener('scroll', scrolledColorActive)
+
+    scrolledColorActive()
+
+    return () => {
+        window.removeEventListener('scroll', scrolledColorActive)
+    }
+}, [])
+
     return (
         <header className='header-component'>
-            <div className={`header-container ${scrolled ? 'scrolled' : ''}`}>
+            <div
+                className={`header-container ${
+                    scrolled ? 'scrolled' : ''
+                }`}
+            >
                 <div className='hotel-logo'>
                     <h1>Hotel</h1>
                 </div>
+
                 <nav className='hotel-navigation'>
                     <ul className='hotel-navigation-list'>
+
                         <li className='hotel-navigation-list-li'>
-                            <a href="#">O Hotel</a>
+                            <a
+                                href="#hotel"
+                                className={
+                                    activeSection === 'hotel'
+                                        ? 'active'
+                                        : ''
+                                }
+                            >
+                                O Hotel
+                            </a>
                         </li>
+
                         <li className='hotel-navigation-list-li'>
-                            <a href="#">Acomodações</a>
+                            <a
+                                href="#acomodacoes"
+                                className={
+                                    activeSection === 'acomodacoes'
+                                        ? 'active'
+                                        : ''
+                                }
+                            >
+                                Acomodações
+                            </a>
                         </li>
+
                         <li className='hotel-navigation-list-li'>
-                            <a href="#">Serviços</a>
+                            <a
+                                href="#servicos"
+                                className={
+                                    activeSection === 'servicos'
+                                        ? 'active'
+                                        : ''
+                                }
+                            >
+                                Serviços
+                            </a>
                         </li>
+
                         <li className='hotel-navigation-list-li'>
-                            <a href="#">Café da Manhã</a>
+                            <a
+                                href="#cafe-da-manha"
+                                className={
+                                    activeSection === 'cafe-da-manha'
+                                        ? 'active'
+                                        : ''
+                                }
+                            >
+                                Café da Manhã
+                            </a>
                         </li>
+
                         <li className='hotel-navigation-list-li'>
-                            <a href="#">Pet Friendly</a>
+                            <a
+                                href="#pet-friendly"
+                                className={
+                                    activeSection === 'pet-friendly'
+                                        ? 'active'
+                                        : ''
+                                }
+                            >
+                                Pet Friendly
+                            </a>
                         </li>
+
                         <li className='hotel-navigation-list-li'>
-                            <a href="#">Fale Conosco</a>
+                            <a
+                                href="#fale-conosco"
+                                className={
+                                    activeSection === 'fale-conosco'
+                                        ? 'active'
+                                        : ''
+                                }
+                            >
+                                Fale Conosco
+                            </a>
                         </li>
+
                     </ul>
                 </nav>
+
                 <div className='hotel-link'>
                     <a href="#">Reserve-Já</a>
                 </div>

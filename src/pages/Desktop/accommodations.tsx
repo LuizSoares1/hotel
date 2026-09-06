@@ -70,7 +70,7 @@ const Acomodacoes: React.FC = () => {
 // Eu vou adaptar essa página para o modelo Mobile
 
     return (
-        <section className='accommodations-section'>
+        <section className='accommodations-section' id='acomodacoes'>
             <div className='accommodations-container'>
                 <div className='accommodations-texts'>
                     <div className='accommodations-tittles'>

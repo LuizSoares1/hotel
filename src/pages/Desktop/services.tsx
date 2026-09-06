@@ -62,7 +62,7 @@ const services = [
 
 const Servicos: React.FC = () => {
     return (
-        <section className='services-section'>
+        <section className='services-section' id='servicos'>
             <div className='services-container'>
                 <div className='services-sobre'>
                     <div className='services-text-span'>

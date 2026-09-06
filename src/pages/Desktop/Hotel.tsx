@@ -29,7 +29,7 @@ const Hotel: React.FC = () => {
     }, [])
 
     return (
-        <section className='hotel-section'>
+        <section className='hotel-section' id='hotel'>
             <div className="hotel-container">
                 <div className='hotel-sobre'>
                     <div className='hotel-text-span'>

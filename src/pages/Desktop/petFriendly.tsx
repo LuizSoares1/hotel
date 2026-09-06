@@ -3,7 +3,7 @@ import './style/petfriendly.sass'
 
 const petFriendly: React.FC = () => {
     return (
-        <section className="petFriendly-section">
+        <section className="petFriendly-section" id='pet-friendly'>
             <div className="petFriendly-container">
                 <div className='petFriendly-text'>
                     <div className='petFriendly-text-span'>

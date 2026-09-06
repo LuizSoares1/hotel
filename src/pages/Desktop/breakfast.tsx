@@ -3,7 +3,7 @@ import './style/breakfast.sass'
 
 const CafeDaManha: React.FC = () => {
   return (
-    <section className="breakfast-section">
+    <section className="breakfast-section" id='cafe-da-manha'>
       <div className="breakfast-container">
         <div className="breackfast-image">
           <div className="breakfast-image-img">

@@ -10,23 +10,30 @@
     justify-content: space-around
     padding: 50px 12px
     align-items: center
-    transition: all 0.3s
+    transition: all 0.3s ease
+
     &.scrolled
         padding: 12px
         background: #fff
-        box-shadow: 0 0 22px rgba(0 0 0 / 5%)
+        box-shadow: 0 0 22px rgba(0, 0, 0, 0.05)
 
         .hotel-logo
             color: #000
-        
-        .hotel-navigation-list-li a
-            color: #000
-            &:hover
-                color: #EAC47D
 
-        .hotel-link a
-            border-color: #000
-            color: #000
+        .hotel-navigation-list-li
+            a
+                color: #000
+
+                &:hover
+                    color: #EAC47D
+
+                &.active
+                    color: #EDC46F
+
+        .hotel-link
+            a
+                border-color: #000
+                color: #000
 
 .hotel-logo
     color: #fff
@@ -41,9 +48,13 @@
     a
         text-decoration: none
         color: #fff
-        transition: 0.2s all
+        transition: color 0.3s ease
+
         &:hover
             color: #EAC47D
+
+        &.active
+            color: #EDC46F
 
 .hotel-link
     a
@@ -53,8 +64,9 @@
         color: #fff
         text-decoration: none
         transition: all 0.2s ease-in
+
         &:hover
             background-color: #EAC47D
 
-
-    
+html
+    scroll-behavior: smooth

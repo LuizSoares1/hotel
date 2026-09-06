@@ -3,7 +3,7 @@ import './style/talkwithus.sass'
 
 const FaleConosco: React.FC = () => {
     return (
-        <section className="talkwithus-section">
+        <section className="talkwithus-section" id="fale-conosco">
             <div className="talkwithus-cobntainer">
                 <div className="talkwithus-tittle">
                     <div className='talkwithus-text'>
