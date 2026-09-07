@@ -1,0 +1,426 @@
+/* =========================================================
+   ACOMODAÇÕES — MOBILE
+   ========================================================= */
+
+.accommodations-section-mobile
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 56px 0
+  background: #f7f7f7
+  box-sizing: border-box
+  overflow-x: hidden
+  width: 100%
+
+
+.accommodations-container-mobile
+  width: 100%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+
+/* =========================================================
+   TÍTULOS
+   ========================================================= */
+
+.accommodations-tittles-mobile
+  margin-bottom: 16px
+  padding: 0 20px
+  text-align: center
+
+
+.accommodations-span-mobile
+  span
+    font-family: Poppins
+    font-weight: 400
+    font-size: 12px
+    text-transform: uppercase
+    letter-spacing: 2.5px
+    color: #908573
+
+
+.accommodations-h1-mobile
+  h1
+    font-size: 34px
+    font-family: "lora"
+    font-weight: 700
+    line-height: 1.15
+    margin: 10px 0 0
+
+
+.accommodations-bar-mobile
+  margin: 16px 0 28px 0
+  display: flex
+  justify-content: center
+
+
+.bar-mobile
+  width: 90px
+  height: 3px
+  background: #000
+
+
+/* =========================================================
+   TEXTO
+   ========================================================= */
+
+.accommodations-texts-mobile
+  width: 100%
+
+.accommodations-text-mobile
+  box-sizing: border-box
+  width: 100%
+  padding: 0 24px
+  margin: 0 0 8px
+  text-align: center
+
+
+.accommodations-paragraph-mobile
+
+  span
+    font-family: "Poppins", sans-serif
+    font-size: 14px
+    font-weight: 400
+    line-height: 1.75
+    color: #908573
+
+
+/* =========================================================
+   SLIDER
+   ========================================================= */
+
+.accommodations-slider-wrapper-mobile
+  width: 100%
+  margin: 24px 0 0
+  position: relative
+  overflow: visible
+
+
+.accommodations-slider-mobile
+  box-sizing: border-box
+  width: 100%
+  // padding lateral generoso: dá espaço pra sombra do card
+  // e ainda deixa o próximo slide "espiando" na borda (peek)
+  padding: 20px 0 52px
+  position: relative
+  // ESSENCIAL: overflow: hidden clipa a fileira de slides do Swiper,
+  // mostrando só o slide atual (+ peek). Sem isso, todos os slides
+  // ficam lado a lado e estouram a largura da tela.
+  overflow: hidden
+
+  // fade suave nas bordas (mesmo efeito do desktop): disfarça o corte
+  // do card/sombra nas pontas do slider durante o arrasto/transição
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%)
+  mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%)
+
+
+.accommodations-slider-mobile
+
+  .swiper-wrapper
+    padding: 0
+
+  .swiper-slide
+    height: auto
+    display: flex
+    justify-content: center
+    align-items: stretch
+    // opacidade cheia por padrão (ex: quando 2+ cards aparecem lado a lado
+    // no breakpoint de tablet, nenhum deles deve ficar esmaecido)
+    opacity: 1
+
+
+// o efeito de "esmaecer" o card vizinho só faz sentido no modo
+// peek (1 card + espiadinha). Abaixo de 700px é onde isso se aplica;
+// ajuste esse valor para bater com o breakpoint usado no Swiper (JS)
+@media (max-width: 699px)
+
+  .accommodations-slider-mobile
+
+    .swiper-slide
+      opacity: .45
+      transition: opacity .3s ease
+
+    .swiper-slide-active
+      opacity: 1
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.accommodation-card-mobile
+  position: relative
+  width: 100%
+  min-height: 420px
+  display: flex
+  flex-direction: column
+  overflow: hidden
+  background: #fff
+  border: 1px solid rgba(0, 0, 0, .025)
+  border-radius: 16px
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .08)
+
+
+/* =========================================================
+   IMAGEM
+   ========================================================= */
+
+.accommodation-card-img-mobile
+  position: relative
+  width: 100%
+  height: 200px
+  flex-shrink: 0
+  overflow: hidden
+  background: #dedede
+
+
+.accommodation-card-img-mobile img
+  width: 100%
+  height: 100%
+  display: block
+  object-fit: cover
+
+
+.accommodation-card-overlay-mobile
+  position: absolute
+  inset: 0
+  pointer-events: none
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .18) 100%)
+
+
+/* =========================================================
+   CONTEÚDO DO CARD
+   ========================================================= */
+
+.accommodation-card-content-mobile
+  position: relative
+  flex: 1
+  display: flex
+  flex-direction: column
+  padding: 20px 22px 22px
+
+
+.accommodation-card-mobile h2
+  margin: 0 0 10px
+  font-family: "Lora", serif
+  font-size: 22px
+  font-weight: 700
+  line-height: 1.2
+  color: #292929
+
+
+.accommodation-card-mobile p
+  width: 100%
+  margin: 0
+  font-family: "Poppins", sans-serif
+  font-size: 13.5px
+  font-weight: 400
+  line-height: 1.65
+  color: #777
+  flex: 1
+
+
+/* =========================================================
+   BOTÃO
+   ========================================================= */
+
+.accommodation-card-button-mobile
+  box-sizing: border-box
+  width: 100%
+  height: 44px
+  margin-top: 20px
+  padding: 0 16px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  border: none
+  border-radius: 8px
+  background: #c19a6b
+  color: #fff
+  font-family: "Poppins", sans-serif
+  font-size: 11px
+  font-weight: 600
+  letter-spacing: .8px
+  cursor: pointer
+
+
+.accommodation-card-button-mobile .button-arrow-mobile
+  font-size: 17px
+  font-weight: 300
+  line-height: 1
+
+
+/* =========================================================
+   SETAS EXTERNAS (VIDRO FOSCO)
+   ========================================================= */
+
+.accommodations-prev-mobile,
+.accommodations-next-mobile
+  // ocultas no modo peek (mobile estreito): o swipe já é o gesto
+  // principal ali, e as setas ficariam apertadas numa tela pequena
+  display: none
+  width: 44px
+  height: 44px
+  position: absolute
+  top: calc(50% - 26px)
+  align-items: center
+  justify-content: center
+  padding: 0
+  border: 1px solid rgba(255, 255, 255, .8)
+  border-radius: 50%
+  background: rgba(255, 255, 255, .68)
+  backdrop-filter: blur(18px) saturate(180%)
+  -webkit-backdrop-filter: blur(18px) saturate(180%)
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .10), inset 0 1px 1px rgba(255, 255, 255, .9)
+  color: #625d56
+  font-family: Arial, sans-serif
+  font-size: 28px
+  font-weight: 300
+  line-height: 1
+  cursor: pointer
+  z-index: 50
+  transform: translateY(-50%)
+  transition: transform .3s ease, background .3s ease, box-shadow .3s ease, color .3s ease
+
+
+.accommodations-prev-mobile::before,
+.accommodations-next-mobile::before
+  content: ""
+  position: absolute
+  inset: 2px
+  border-radius: 50%
+  background: linear-gradient(135deg, rgba(255, 255, 255, .55), rgba(255, 255, 255, 0))
+  pointer-events: none
+
+
+.accommodations-prev-mobile span,
+.accommodations-next-mobile span
+  position: relative
+  z-index: 2
+  display: block
+  transform: translateY(-1px)
+
+
+.accommodations-prev-mobile:hover,
+.accommodations-next-mobile:hover
+  color: #a67d4f
+  background: rgba(255, 255, 255, .82)
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .14), inset 0 1px 1px rgba(255, 255, 255, 1)
+  transform: translateY(-50%) scale(1.06)
+
+
+@media (min-width: 700px)
+
+  .accommodations-prev-mobile,
+  .accommodations-next-mobile
+    display: flex
+
+  .accommodations-prev-mobile
+    left: 0px
+
+  .accommodations-next-mobile
+    right: 0px
+
+
+@media (min-width: 1024px)
+
+  .accommodations-prev-mobile
+    left: 0px
+
+  .accommodations-next-mobile
+    right: 0px
+
+
+/* =========================================================
+   AJUSTES PARA TABLET/DESKTOP (2 E 3 CARDS)
+   ========================================================= */
+
+@media (min-width: 700px)
+
+  .accommodations-slider-mobile
+    // padding horizontal REMOVIDO daqui de propósito: aplicar padding
+    // direto no elemento raiz do Swiper quebra o cálculo interno de
+    // largura dos slides (o Swiper não desconta esse padding), causando
+    // uma fatia do próximo card vazando na borda. O respiro lateral
+    // agora é feito via slidesOffsetBefore/slidesOffsetAfter no componente.
+    padding: 20px 0 52px
+    // fade mais largo aqui: com 2-3 cards visíveis, um fade maior
+    // fica proporcional ao tamanho dos cards
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 48px, #000 calc(100% - 48px), transparent 100%)
+    mask-image: linear-gradient(to right, transparent 0, #000 48px, #000 calc(100% - 48px), transparent 100%)
+
+  .accommodations-section-mobile
+    // respiro lateral geral: sem isso, o container fica colado
+    // na borda da tela e as setas negativas saem cortadas
+    padding: 56px 24px
+
+
+@media (min-width: 1024px)
+
+  .accommodations-section-mobile
+    padding: 56px 32px
+
+  .accommodations-container-mobile
+    max-width: 1200px
+    margin: 0 auto
+
+  .accommodations-tittles-mobile
+    padding: 0
+
+  .accommodations-h1-mobile
+    h1
+      font-size: 48px
+
+  .accommodations-text-mobile
+    max-width: 760px
+    margin: 0 auto 10px
+    padding: 0
+
+  .accommodations-slider-wrapper-mobile
+    max-width: 1180px
+    margin: 35px auto 0
+
+  .accommodations-slider-mobile
+    padding: 20px 0 60px
+
+  .accommodation-card-mobile
+    min-height: 490px
+
+  .accommodation-card-img-mobile
+    height: 235px
+
+  .accommodation-card-content-mobile
+    padding: 24px 26px 26px
+
+  .accommodation-card-mobile h2
+    font-size: 25px
+
+  .accommodation-card-mobile p
+    font-size: 14px
+    line-height: 1.7
+
+
+/* =========================================================
+   PAGINAÇÃO
+   ========================================================= */
+
+.accommodations-slider-mobile
+
+  .swiper-pagination
+    bottom: 16px
+
+  .swiper-pagination-bullet
+    width: 6px
+    height: 6px
+    margin: 0 4px !important
+    opacity: .35
+    background: #908573
+    transition: width .3s ease, opacity .3s ease, background .3s ease
+
+  .swiper-pagination-bullet-active
+    width: 20px
+    border-radius: 10px
+    opacity: 1
+    background: #c19a6b

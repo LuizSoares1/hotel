@@ -8,6 +8,11 @@
   align-items: center
   padding: 80px 20px
   background: #f7f7f7
+  // box-sizing é ESSENCIAL aqui: sem ele, width:100% + padding
+  // soma 40px além da largura da tela e gera scroll horizontal
+  box-sizing: border-box
+  overflow-x: hidden
+  width: 100%
 
 
 .accommodations-container
@@ -98,18 +103,20 @@
 
 
 .accommodations-slider
+  // box-sizing garante que o padding não aumente a largura real do elemento
+  box-sizing: border-box
   width: 100%
-  // padding lateral extra para dar "respiro" à sombra dos cards,
+  // padding lateral para dar "respiro" à sombra dos cards,
   // evitando que ela seja cortada pelo overflow: hidden do Swiper
-  padding: 25px 24px 60px
-  margin: 0 -24px
+  // (sem margin negativa, para não estourar a largura da viewport)
+  padding: 25px 16px 60px
   position: relative
   overflow: hidden
 
   // fade suave nas bordas para disfarçar o corte lateral
   // durante o arrasto/transição dos slides
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%)
-  mask-image: linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%)
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 16px, #000 calc(100% - 16px), transparent 100%)
+  mask-image: linear-gradient(to right, transparent 0, #000 16px, #000 calc(100% - 16px), transparent 100%)
 
 
 .accommodations-slider
@@ -227,6 +234,7 @@
    ========================================================= */
 
 .accommodation-card-button
+  box-sizing: border-box
   width: 100%
   height: 46px
   margin-top: 25px
@@ -298,6 +306,21 @@
 
 .accommodations-next
   right: -24px
+
+
+@media (max-width: 700px)
+
+  .accommodations-prev,
+  .accommodations-next
+    width: 38px
+    height: 38px
+    font-size: 24px
+
+  .accommodations-prev
+    left: 4px
+
+  .accommodations-next
+    right: 4px
 
 
 .accommodations-prev::before,
