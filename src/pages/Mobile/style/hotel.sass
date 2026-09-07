@@ -1,0 +1,192 @@
+.hotel-mobile
+    padding: 70px 0
+    background: #fff
+
+.hotel-mobile-container
+    width: calc(100% - 30px)
+    max-width: 900px
+    margin: 0 auto
+
+.hotel-mobile-header
+    margin-bottom: 30px
+
+    > span
+        display: block
+        margin-bottom: 12px
+        color: #908573
+        font-family: Poppins, sans-serif
+        font-size: 12px
+        font-weight: 400
+        letter-spacing: 3px
+        text-transform: uppercase
+
+    h1
+        margin: 0
+        color: #111
+        font-family: "Lora", serif
+        font-size: 44px
+        font-weight: 700
+        line-height: 1
+
+    p
+        margin: 0
+        color: #908573
+        font-family: Poppins, sans-serif
+        font-size: 14px
+        line-height: 1.8
+
+.hotel-mobile-bar
+    width: 100px
+    height: 3px
+    margin: 20px 0 25px
+    background: #000
+
+
+// ==========================================
+// SLIDER
+// ==========================================
+
+.hotel-mobile-slider
+    position: relative
+    width: 100%
+    aspect-ratio: 16 / 10
+    overflow: hidden
+    border-radius: 10px
+    background: #eee
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15)
+    touch-action: pan-y
+    user-select: none
+
+.hotel-mobile-image
+    position: absolute
+    inset: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+    opacity: 0
+    transition: opacity 0.6s ease
+
+    &.active
+        opacity: 1
+
+
+// ==========================================
+// BOTÕES
+// ==========================================
+
+.hotel-mobile-btn
+    position: absolute
+    top: 50%
+    z-index: 2
+
+    display: flex
+    align-items: center
+    justify-content: center
+
+    width: 40px
+    height: 40px
+    padding: 0
+
+    border: 1px solid rgba(255, 255, 255, 0.8)
+    border-radius: 50%
+
+    background: rgba(0, 0, 0, 0.35)
+    color: #fff
+
+    font-size: 20px
+    cursor: pointer
+
+    transform: translateY(-50%)
+    transition: all 0.3s ease
+
+    &:active
+        transform: translateY(-50%) scale(0.92)
+
+    &:hover
+        background: #EAC47D
+        border-color: #EAC47D
+
+    &.prev
+        left: 12px
+
+    &.next
+        right: 12px
+
+
+// ==========================================
+// CONTADOR
+// ==========================================
+
+.hotel-mobile-counter
+    position: absolute
+    right: 15px
+    bottom: 15px
+    z-index: 2
+
+    display: flex
+    align-items: center
+    gap: 8px
+
+    padding: 8px 12px
+
+    border-radius: 20px
+
+    background: rgba(0, 0, 0, 0.45)
+    color: #fff
+
+    backdrop-filter: blur(5px)
+
+    span
+        font-family: Poppins, sans-serif
+        font-size: 11px
+        font-weight: 500
+
+.hotel-mobile-counter-line
+    width: 20px
+    height: 1px
+    background: rgba(255, 255, 255, 0.7)
+
+
+// ==========================================
+// TABLETS / TELAS MAIORES
+// ==========================================
+
+@media (min-width: 601px)
+    .hotel-mobile-container
+        width: calc(100% - 60px)
+
+    .hotel-mobile-slider
+        border-radius: 12px
+
+    .hotel-mobile-btn
+        width: 45px
+        height: 45px
+        font-size: 22px
+
+
+// ==========================================
+// CELULARES PEQUENOS
+// ==========================================
+
+@media (max-width: 380px)
+    .hotel-mobile
+        padding: 55px 0
+
+    .hotel-mobile-container
+        width: calc(100% - 24px)
+
+    .hotel-mobile-header
+        h1
+            font-size: 38px
+
+        p
+            font-size: 13px
+
+    .hotel-mobile-btn
+        width: 36px
+        height: 36px
+        font-size: 18px
+
+    .hotel-mobile-counter
+        right: 10px
+        bottom: 10px
