@@ -4,6 +4,18 @@
     top: 0
     left: 0
     z-index: 101
+    transition: all 0.3s ease
+
+    &.scrolled
+        background: #fff
+        box-shadow: 0 0 22px rgba(0, 0, 0, 0.05)
+
+        .hotel-logo
+            color: #000
+
+        .menu-button
+            span
+                background: #000
 
 .header-mobile-container
     display: flex
@@ -17,6 +29,7 @@
 .hotel-logo
     color: #fff
     font-weight: 600
+    transition: color 0.3s ease
 
 .menu-button
     display: flex
@@ -41,7 +54,7 @@
 
     &.open
         span
-            background: black
+            background: black !important
             &:nth-child(1)
                 transform: translateY(8px) rotate(45deg)
 

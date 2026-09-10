@@ -1,15 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './styles/HeaderMobile.sass'
 
 const HeaderMobile: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState(false)
+    const [scrolled, setScrolled] = useState(false)
 
     const closeMenu = () => {
         setMenuOpen(false)
     }
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 10)
+        }
+
+        window.addEventListener('scroll', handleScroll)
+
+        handleScroll()
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
     return (
-        <header className="header-mobile">
+        <header className={`header-mobile ${scrolled ? 'scrolled' : ''}`}>
             <div className="header-mobile-container">
                 <h1 className="hotel-logo">
                     HOTEL
@@ -47,26 +62,26 @@ const HeaderMobile: React.FC = () => {
                     </li>
 
                     <li>
-                        <a href="#experiencias" onClick={closeMenu}>
+                        <a href="#cafe-da-manha" onClick={closeMenu}>
                             Café da Manhã
                         </a>
                     </li>
 
                     <li>
-                        <a href="#experiencias" onClick={closeMenu}>
+                        <a href="#pet-friendly" onClick={closeMenu}>
                             Pet Friendly
                         </a>
                     </li>
 
                     <li>
-                        <a href="#contato" onClick={closeMenu}>
+                        <a href="#fale-conosco" onClick={closeMenu}>
                             Fale Conosco
                         </a>
                     </li>
                 </ul>
 
                 <div className="mobile-menu-reservation">
-                    <a href="#reserva" onClick={closeMenu}>
+                    <a href="#fale-conosco" onClick={closeMenu}>
                         Reserva Já
                     </a>
                 </div>
