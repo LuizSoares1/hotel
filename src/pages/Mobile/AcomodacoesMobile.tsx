@@ -72,7 +72,7 @@ const AcomodacoesMobile: React.FC = () => {
                         </div>
 
                         <div className="accommodations-h1-mobile">
-                            <h1>Apartamentos e Suítes</h1>
+                            <h2>Apartamentos e Suítes</h2>
                         </div>
 
                         <div className="accommodations-bar-mobile">

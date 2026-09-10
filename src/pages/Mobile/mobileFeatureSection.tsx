@@ -21,12 +21,14 @@ const MobileFeatureSection: React.FC<MobileFeatureSectionProps> = ({
     return (
         <section className="mobile-feature-section" id={id}>
             <div className="mobile-feature-container">
-                <div className="mobile-feature-span">
-                    <span>{spanText}</span>
-                </div>
-                <div className="mobile-feature-tittle">
-                    <h2>{title}</h2>
-                    <div className="bar"></div>
+                <div className="mobile-feature-heading">
+                    <div className="mobile-feature-span">
+                        <span>{spanText}</span>
+                    </div>
+                    <div className="mobile-feature-tittle">
+                        <h2>{title}</h2>
+                        <div className="bar"></div>
+                    </div>
                 </div>
 
                 <div className="mobile-feature-image">

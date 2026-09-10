@@ -7,7 +7,7 @@ import ServicosMobile from "./ServicesMobile"
 import CafeDaManhaMobile from "./breakfastMobile";
 import PetFriendlyMobile from "./petFriendlyMobile";
 import FaleConoscoMobile from "./talkWithUsMobile";
-import FooterDesktop from "../../components/Desktop/FooterDesktop";
+import FooterMobile from "../../components/Mobile/FooterMobile";
 
 const MobileApp:React.FC = () => {
     return (
@@ -20,7 +20,7 @@ const MobileApp:React.FC = () => {
             <CafeDaManhaMobile />
             <PetFriendlyMobile />
             <FaleConoscoMobile />
-            <FooterDesktop />
+            <FooterMobile />
 
         </>
     )

@@ -86,9 +86,9 @@ const HotelMobile: React.FC = () => {
                         Sobre Nós
                     </span>
 
-                    <h1>
+                    <h2>
                         Hotel
-                    </h1>
+                    </h2>
 
                     <div className="hotel-mobile-bar" />
 

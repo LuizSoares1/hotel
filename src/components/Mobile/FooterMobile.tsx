@@ -2,7 +2,7 @@ import React from "react";
 import './styles/footer.sass'
 
 
-const FooterDesktop: React.FC = () => {
+const FooterMobile: React.FC = () => {
     return (
         <footer className="footer-component">
             <div className="footer-text">
@@ -12,4 +12,4 @@ const FooterDesktop: React.FC = () => {
     )
 }
 
-export default FooterDesktop
+export default FooterMobile
